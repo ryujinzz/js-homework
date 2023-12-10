@@ -38,18 +38,18 @@ const button = document.querySelector(".btn-login");
 // 이메일 실시간 체크
 function handleEmail() {
   // 입력창의 값이 이메일 형태와 맞지 않게 입력된 경우
-  if (!emailReg(email.value)) {
-    // 이메일 입력창의 테두리 빨간색으로 변경
-    email.style.borderColor = "#EF4444";
-    // 입력창 하단의 경고 텍스트 보이게
-    email.classList.add("is--invalid");
-  }
-  // 이메일 형태에 적합하게 입력된 경우
-  else {
+  if (emailReg(email.value) || email.value == "") {
     // 테두리 색 원래대로 변경
     email.style.borderColor = "#03cf5d";
     // 경고 텍스트 안보이게 처리
     email.classList.remove("is--invalid");
+  }
+  // 이메일 형태에 적합하게 입력된 경우
+  else {
+    // 이메일 입력창의 테두리 빨간색으로 변경
+    email.style.borderColor = "#EF4444";
+    // 입력창 하단의 경고 텍스트 보이게
+    email.classList.add("is--invalid");
   }
 }
 
@@ -59,14 +59,14 @@ function handleEmail() {
 // 비밀번호 실시간 체크
 function handlePw() {
   // 입력한 비밀번호가 6자 이상이고, 특수문자가 포함일경우
-  if (!pwReg(pw.value)) {
-    // 입력창 테두리 빨간색으로 표시하고 경고 텍스트 보이게 처리
-    pw.style.borderColor = "#EF4444";
-    pw.classList.add("is--invalid");
-  } else {
+  if (pwReg(pw.value) || pw.value == "") {
     // 입력창 테두리 원래 색으로 표시하고 경고 텍스트 안보이게 처리
     pw.style.borderColor = "#03cf5d";
     pw.classList.remove("is--invalid");
+  } else {
+    // 입력창 테두리 빨간색으로 표시하고 경고 텍스트 보이게 처리
+    pw.style.borderColor = "#EF4444";
+    pw.classList.add("is--invalid");
   }
 }
 
