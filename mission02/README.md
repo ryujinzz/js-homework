@@ -37,3 +37,5 @@ if (!li) return;
 
 
 ## 완성된 페이지 gif
+
+![Elemental_final](./client/assets/Elemental_final.gif)
