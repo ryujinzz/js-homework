@@ -15,18 +15,15 @@ const swiper = new Swiper(".swiper", {
     stretch: 100,
   },
   breakpoints: {
-    // 화면의 넓이가 320px 이상일 때
+    // 화면의 넓이가 640px 이상일 때
     640: {
       slidesPerView: 2,
-      spaceBetween: 20,
     },
-    // 화면의 넓이가 640px 이상일 때
+    // 화면의 넓이가 900px 이상일 때
     900: {
-      slidesPerView: 3,
-      spaceBetween: 40,
+      slidesPerView: 4,
     },
   },
-  slidesPerView: 4,
   observer: true,
   observeParents: true,
 });

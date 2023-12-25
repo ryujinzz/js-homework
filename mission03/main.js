@@ -1,48 +1,26 @@
 /* global gsap*/
 import {
-  insertLast,
-  xhrPromise,
   tiger,
   getNode as $,
   renderUserCard,
-  changeColor,
-  renderSpinner,
-  delayP,
   renderEmptyCard,
   clearContents,
 } from "./lib/index.js";
 
-const END_POINT = "http://localhost:3000/users";
+const END_POINT = "http://localhost:3000/test";
 //phase - 1
 
 const userCardInner = $(".user-card-inner");
 //1. user 데이터를 fetch하기
 //2. 함수 안에 넣기
 async function renderUserList() {
-  renderSpinner(userCardInner);
   try {
-    await delayP(1000);
-    gsap.to(".loadingSpinner", {
-      opacity: 0,
-      onComplete() {
-        $(".loadingSpinner").remove();
-      },
-    });
     const response = await tiger.get(END_POINT);
     const userData = response.data;
     userData.forEach(
       (data) => renderUserCard(userCardInner, data)
       //3. 유저 테이터 (이름만) 화면에 렌더링
     );
-    changeColor(".user-card");
-    gsap.from(".user-card", {
-      x: 100,
-      opacity: 0,
-      stagger: {
-        from: "edge",
-        each: 0.1,
-      },
-    });
   } catch (err) {
     renderEmptyCard(userCardInner);
   }

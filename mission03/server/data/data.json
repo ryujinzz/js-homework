@@ -13,6 +13,11 @@
       "id": 2,
       "title": "백엔드 만들기 귀찮을떈?",
       "body": "json-server를 쓰면 된다"
+    },
+    {
+      "name": "dayeong",
+      "email": "나대지마라 ",
+      "id": 3
     }
   ]
 }
