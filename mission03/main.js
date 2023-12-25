@@ -10,7 +10,7 @@ import {
 const END_POINT = "http://localhost:3000/test";
 //phase - 1
 
-const userCardInner = $(".user-card-inner");
+const userCardInner = $(".swiper-wrapper");
 //1. user 데이터를 fetch하기
 //2. 함수 안에 넣기
 async function renderUserList() {

@@ -4,19 +4,15 @@ import { insertLast } from "./insert.js";
 
 function createUserCard({
   id,
-  name = "tiger",
-  email = "tiger@naver.com",
-  website = "tiger@tiger.com",
+  name = "누구에게 보낼 건지 미입력",
+  email = "내용을 입력하지 않음",
 }) {
   return /* html */ `
-  <article class="user-card" data-index="user-${id}">
-  <h3 class="user-name">${name}</h3>
+  <article class="swiper-slide user-card" data-index="user-${id}">
+  <h2 class="user-name">${name}</h2>
   <div class="user-resouce-info">
     <div>
       <a class="user-email" href="mailto:${email}">${email}</a>
-    </div>
-    <div>
-      <a class="user-website" href="${website}" target="_blank" rel="noopener noreferer">${website}</a>
     </div>
   </div>
   <button class="delete">삭제</button>
